@@ -1,3 +1,4 @@
+---
 # Set ip forwarding on in /proc and in the sysctl file and reload if necessary
 - sysctl:
     name: net.ipv6.conf.all.disable_ipv6
