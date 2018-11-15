@@ -7,3 +7,8 @@
                name=net.ipv6.conf.lo.disable_ipv6 value=1 sysctl_set=yes state=present	
                name=fs.file-max value=65536 sysctl_set=yes state=present
                name=vm.max_map_count value=262144 sysctl_set=yes state=present reload=yes
+     - pam_limits:
+               domain=* limit_type=soft limit_item=nofile value=65536
+               domain=* limit_type=hard limit_item=nofile value=65536
+               domain=* limit_type=soft limit_item=nproc value=65536
+               domain=* limit_type=hard limit_item=nproc value=65536 reload=yes
