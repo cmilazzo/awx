@@ -1,0 +1,3 @@
+- hosts: all
+  tasks:
+- user: name=johnd comment="John Doe" id=1040 group=wheel
