@@ -11,4 +11,4 @@
                domain=* limit_type=soft limit_item=nofile value=65536
                domain=* limit_type=hard limit_item=nofile value=65536
                domain=* limit_type=soft limit_item=nproc value=65536
-               domain=* limit_type=hard limit_item=nproc value=65536 reload=yes
+               domain=* limit_type=hard limit_item=nproc value=65536
