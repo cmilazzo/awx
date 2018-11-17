@@ -2,4 +2,5 @@
   tasks:
      - user: name=ansible groups=wheel password=$1$SomeSalt$eD5Wb8WHmUnIwfnvHvUvP1 state=present
      - authorized_key: key='ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAQE83YN0Xzlfl3Daj/TnKcdbIQxnuz3yCSK5BWxn+WI2vnEg/iiTB1RDKcGhfEk49h9Kd86hC3uyoGhbSevi33Vce0gaXb9RuOzIKtBF8YxaBSodCiKm29ehl96mHLPpL3ok9oFwjBtZsu6Oona1gr0Eqyv2eVP0vXJjE40GQRIikxvHkBaM9DKcdCyfZszBRg2LNTP4iHkeAah3aNit08smg3+h6a8bblxjXkWBcAdxvrWCGXKAeUtDtiCgOZCKpyU1trsDetnV6L4xE16/RY+TB+daHrqyb1RK2VIZnhE6XZn7UfwhcAVIRi09YHFJrG+f9ftTsDC7HOQKHDtXt ansible@awx.proxmox.local' user=ansible state=present 
+     - authorized_key: key='ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAxw2FflOO3zo3B/ayyVZkjP6Tr0C2MbWFZtVFQD4wRS0AvRc+/XDtNZVVyr9vfFA0Sr6t2bVNAvlmm87umdT9QFTXeP/d7CZYRMteMo5VvdDqsa/1kE3nUIhbd8GkUh2i3xk/02cv+9pT35tWxLgicaqzgN5dxQHQHGHqOpmm2ue4K/JJhjycPxoFZMwe4Voc0c1BzHOnsQSRay2+o97/+Q0KIbKpuusMg5290lEEooomkcrjTIt9hUme1FGkqyxq74wXB50giIcAwm90DnIFYuuVs9A053pu3BHYw0Yj4qiDsxTggo2tEVcz+eymitkMZw8E5YcMF7KsU+HXN1OUAQ== rsa-key-20181103' user=root state=present 
     
