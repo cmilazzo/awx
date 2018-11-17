@@ -12,6 +12,9 @@
                domain=* limit_type=hard limit_item=nofile value=65536
                domain=* limit_type=soft limit_item=nproc value=65536
                domain=* limit_type=hard limit_item=nproc value=65536
+     - yum
+               name=docker state=present
+               name='*' state=latest
      - systemd:
                name=firewalld enabled=no state=stopped
                name=docker enabled=yes state=started
