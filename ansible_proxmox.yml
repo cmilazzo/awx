@@ -21,7 +21,8 @@
                name=ibcgroup
                name=checkpolicy
                name=docker state=latest
-               name='*' state=latest
      - systemd:
                name=firewalld enabled=no state=stopped
                name=docker enabled=yes state=started
+     - yum
+               name='*' state=latest
