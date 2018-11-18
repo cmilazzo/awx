@@ -15,7 +15,7 @@
      - yum_repository:
                name=docker description='docker repo' baseurl=https://download.docker.com/linux/centos/7/$basearch/stable gpgcheck=true gpgkey=https://download.docker.com/linux/centos/gpg enabled=yes
      - yum:
-               name=docker
+               name=docker state=present
      - systemd:
                name=firewalld enabled=no state=stopped
                name=docker enabled=yes state=started
