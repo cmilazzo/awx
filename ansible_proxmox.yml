@@ -12,7 +12,11 @@
                domain=* limit_type=hard limit_item=nofile value=65536
                domain=* limit_type=soft limit_item=nproc value=65536
                domain=* limit_type=hard limit_item=nproc value=65536
+     - yum_repository:
+               name=docker description='docker repo' baseurl=https://download.docker.com/linux/centos/docker-ce.repo
      - yum:
+               name=docker state=latest
                name='*' state=latest
+
      - systemd:
                name=firewalld enabled=no state=stopped
