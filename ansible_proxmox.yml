@@ -18,9 +18,6 @@
                name=yum-utils
                name=lvm2
                name=device-mapper-persistent-data
-               name=container-storage-setup
-               name=ibcgroup
-               name=checkpolicy
                name=docker
      - systemd:
                name=firewalld enabled=no state=stopped
