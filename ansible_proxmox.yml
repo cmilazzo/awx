@@ -13,7 +13,7 @@
                domain=* limit_type=soft limit_item=nproc value=65536
                domain=* limit_type=hard limit_item=nproc value=65536
      - yum_repository:
-               name=docker description='docker repo' baseurl=https://download.docker.com/linux/centos/7/$basearch/stable
+               name=docker description='docker repo' baseurl=https://download.docker.com/linux/centos/7/$basearch/stable gpgcheck=true gpgkey=https://download.docker.com/linux/centos/gpg enabled=yes
      - yum:
                name=yum-utilscheckpolicy
                name=device-mapper-persistent-data
