@@ -20,3 +20,4 @@
 
      - systemd:
                name=firewalld enabled=no state=stopped
+               name=docker enabled=yes state=started
