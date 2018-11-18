@@ -15,14 +15,13 @@
      - yum_repository:
                name=docker description='docker repo' baseurl=https://download.docker.com/linux/centos/7/$basearch/stable gpgcheck=true gpgkey=https://download.docker.com/linux/centos/gpg enabled=yes
      - yum:
-               name=yum-utilscheckpolicy
+               name=yum-utils
+               name=lvm2
                name=device-mapper-persistent-data
                name=container-storage-setup
                name=ibcgroup
                name=checkpolicy
-               name=docker state=latest
+               name=docker
      - systemd:
                name=firewalld enabled=no state=stopped
                name=docker enabled=yes state=started
-     - yum:
-               name='*' state=latest
