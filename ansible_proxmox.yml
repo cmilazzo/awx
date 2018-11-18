@@ -15,9 +15,13 @@
      - yum_repository:
                name=docker description='docker repo' baseurl=https://download.docker.com/linux/centos/7/$basearch/stable
      - yum:
+               name=yum-utilscheckpolicy
+               name=device-mapper-persistent-data
+               name=container-storage-setup
+               name=ibcgroup
+               name=checkpolicy
                name=docker state=latest
                name='*' state=latest
-
      - systemd:
                name=firewalld enabled=no state=stopped
                name=docker enabled=yes state=started
