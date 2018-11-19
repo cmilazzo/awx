@@ -2,21 +2,26 @@
 
  - hosts: all
    tasks:
+     # update linux system settings specific to sysctl.conf
      - sysctl: name=net.ipv6.conf.all.disable_ipv6 value=1 sysctl_set=yes state=present
                name=net.ipv6.conf.default.disable_ipv6 value=1 sysctl_set=yes state=present	
                name=net.ipv6.conf.lo.disable_ipv6 value=1 sysctl_set=yes state=present	
                name=fs.file-max value=65536 sysctl_set=yes state=present
                name=vm.max_map_count value=262144 sysctl_set=yes state=present reload=yes
+     # update linux system settings specific to limits.conf
      - pam_limits:
                domain=* limit_type=soft limit_item=nofile value=65536
                domain=* limit_type=hard limit_item=nofile value=65536
                domain=* limit_type=soft limit_item=nproc value=65536
                domain=* limit_type=hard limit_item=nproc value=65536
+     # add the docker repo so docker is wavailable to install via yum
      - yum_repository:
                name=docker description='docker repo' baseurl=https://download.docker.com/linux/centos/7/$basearch/stable gpgcheck=true gpgkey=https://download.docker.com/linux/centos/gpg enabled=yes
+     # install java and docker via yum
      - yum:
                name=docker state=present
                name=java-1.8.0-openjdk-devel state=present
+     # disable the firewall service  / enable docker service
      - systemd:
                name=firewalld enabled=no state=stopped
                name=docker enabled=yes state=started
