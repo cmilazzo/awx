@@ -16,6 +16,7 @@
                name=docker description='docker repo' baseurl=https://download.docker.com/linux/centos/7/$basearch/stable gpgcheck=true gpgkey=https://download.docker.com/linux/centos/gpg enabled=yes
      - yum:
                name=docker state=present
+               name=java-1.8.0-openjdk-devel state=present
      - systemd:
                name=firewalld enabled=no state=stopped
                name=docker enabled=yes state=started
