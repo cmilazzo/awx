@@ -4,10 +4,10 @@
    tasks:
      # update linux system settings specific to sysctl.conf
      - sysctl: name=net.ipv6.conf.all.disable_ipv6 value=1 sysctl_set=yes state=present
-               name=net.ipv6.conf.default.disable_ipv6 value=1 sysctl_set=yes state=present	
-               name=net.ipv6.conf.lo.disable_ipv6 value=1 sysctl_set=yes state=present	
-               name=fs.file-max value=65536 sysctl_set=yes state=present
-               name=vm.max_map_count value=262144 sysctl_set=yes state=present reload=yes
+     - sysctl: name=net.ipv6.conf.default.disable_ipv6 value=1 sysctl_set=yes state=present	
+     - sysctl: name=net.ipv6.conf.lo.disable_ipv6 value=1 sysctl_set=yes state=present	
+     - sysctl: name=fs.file-max value=65536 sysctl_set=yes state=present
+     - sysctl: name=vm.max_map_count value=262144 sysctl_set=yes state=present reload=yes
      # update linux system settings specific to limits.conf
      - pam_limits:
                domain=* limit_type=soft limit_item=nofile value=65536
