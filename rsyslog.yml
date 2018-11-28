@@ -1,0 +1,4 @@
+ - hosts: all
+   tasks:
+     # restart rsyslog
+     - systemd: name=rsyslog enabled=yes state=started
