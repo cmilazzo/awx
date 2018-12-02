@@ -18,6 +18,7 @@
      # install java and docker via yum
      - yum: name=docker state=present
      - yum: name=java-1.8.0-openjdk-devel state=present
+     - yum: name=epel-release state=present
      # disable the firewall service  / enable docker service
      - systemd: name=firewalld enabled=no state=stopped
      - systemd: name=docker enabled=yes state=started
